@@ -1,0 +1,24 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+      "baseUrl": ".",
+      "rootDir": ".",
+      "module": "commonjs",
+      "target": "es2021",
+      "moduleResolution": "node",
+      "declaration": true,
+      "sourceMap": true,
+      "resolveJsonModule": true,
+      "esModuleInterop": true,
+      "forceConsistentCasingInFileNames": true,
+      "strict": true,
+      "noImplicitReturns": true,
+      "noFallthroughCasesInSwitch": true,
+      "paths": {
+        "@nx-multirepo/config/*": ["packages/config/*"],
+        "@nx-multirepo/shared/*": ["packages/src/*"]
+      }
+    },
+    "exclude": ["node_modules", "dist"]
+  }
+  

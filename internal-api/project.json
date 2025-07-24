@@ -1,0 +1,36 @@
+{
+    "name": "internal-api",
+    "$schema": "../node_modules/nx/schemas/project-schema.json",
+    "root": "internal-api",
+    "sourceRoot": "internal-api/src",
+    "projectType": "application",
+    "targets": {
+      "build": {
+        "executor": "@nx/js:tsc",
+        "options": {
+          "outputPath": "dist/internal-api",
+          "main": "internal-api/src/main.ts",
+          "tsConfig": "internal-api/tsconfig.json"
+        }
+      },
+      "serve": {
+        "continuous": true,
+        "executor": "@nx/js:node",
+        "defaultConfiguration": "development",
+        "dependsOn": ["build"],
+        "options": {
+          "buildTarget": "internal-api:build",
+          "runBuildTargetDependencies": false
+        },
+        "configurations": {
+          "development": {
+            "buildTarget": "internal-api:build:development"
+          },
+          "production": {
+            "buildTarget": "internal-api:build:production"
+          }
+        }
+      }
+    }
+  }
+  

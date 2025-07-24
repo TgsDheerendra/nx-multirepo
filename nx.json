@@ -1,5 +1,21 @@
 {
-  "extends": "nx/presets/npm.json",
-  "$schema": "./node_modules/nx/schemas/nx-schema.json",
-  "defaultBase": "master"
+  "npmScope": "nx-multirepo",
+  "workspaceLayout": {
+    "libsDir": "packages",
+    "appsDir": "."
+  },
+  "projects": {
+    "internal-api": {
+      "root": "internal-api",
+      "tags": []
+    },
+    "external-api": {
+      "root": "external-api",
+      "tags": []
+    }
+  },
+  "shared": {
+    "root": "packages",
+    "tags": []
+  }
 }
